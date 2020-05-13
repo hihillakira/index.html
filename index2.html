@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>jQuery動作チェック</title>
+</head>
+<body>
+
+<h1>jQueryライブラリーの読み込みテスト</h1>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- jQueryライブラリの読み込み-->
+<button class="clickArea">クリック</button>
+<script>
+	//クリックした時に、、
+	$(".clickArea").click(function(){
+		//1とアラートを出す。
+		alert("1");
+	});
+</script>
+
+<script>
+//  自作のコードはライブラリ読み込みの後に。
+alert($("h1").text());
+</script>
+
+ <button class="clickArea">クリック　テキスト変化</button>
+
+ <div class="textarea">こちらのテキストが書き換えられます.
+ </div>
+
+<script>
+  $(".clickArea").click(function(){
+    $(".textarea").text('テキストが書き換えられました。');
+});
+</script>
+
+<button class="clickArea">クリック　テキスト追加</button>
+
+<script>
+  $(".clickArea").click(function(){
+    $(".textarea").append('テキストが追加されました。');
+  });
+  </script>
+
+<div class="printArea"></div>
+
+<script>
+
+var dinnerData = ["ステーキ","すし","さしみ","カレー","シチュー"];
+//var dinnerDataContent = dinnerData[0];
+var todaysDinnerNo = dinnerData.length;
+for(let i = 0;<=todaysDinnerNo-1;++){
+$(".printArea").append(dinnerData[i]+"<br>");
+ };
+
+</script>
+
+
+
+
+
+</body>
+</html>
